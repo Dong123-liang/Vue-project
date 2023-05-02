@@ -49,7 +49,8 @@
                 登&nbsp;&nbsp;录
               </button>
             </form>
-
+             <p>作者账号:15129900990</p>
+            <span>密码:123</span>
             <div class="call clearFix">
               <ul>
                 <li><img src="./images/qq.png" alt="" /></li>

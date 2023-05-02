@@ -54,8 +54,8 @@
             </ul>
           </div>
           <div class="footerItem">
-            <h4>帮助中心</h4>
-            <img src="./images/wx_cz.jpg" />
+            <h4>京东自营覆盖区县</h4>
+            <span>京东已向全国2661个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。</span>
           </div>
         </div>
         <div class="copyright">

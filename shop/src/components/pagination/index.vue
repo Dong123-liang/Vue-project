@@ -1,18 +1,29 @@
 <template>
   <div class="pagination">
     <h1>开始页{{ startAndEnd.start }}结束页{{ startAndEnd.End }}当前页{{ pageNo }}</h1>
-    <button @click="$emit('currentPage',pageNo - 1)" :disabled="pageNo==1">上一页</button>
-    <button v-if="startAndEnd.start > 1" @click="$emit('currentPage',1)">1</button>
+    <button @click="$emit('currentPage',pageNo - 1)"
+            :disabled="pageNo==1">上一页</button>
+    <button v-if="startAndEnd.start > 1"
+            @click="$emit('currentPage',1)">1</button>
     <button v-if="startAndEnd.start > 2">.....</button>
 
     <!-- 中间连续页码的地方:v-for、数组、对象、数字、字符串 -->
-  <!--   这里使用v-for遍历了数字 startAndEnd.end,原理和数组类似，但 v-for 遍历数组，索引从0开始，v-for遍历数字索引从1开始 -->
-    <button v-for="page in startAndEnd.end"  :key="page" v-show="page >= startAndEnd.start" @click="$emit('currentPage',page)" :class="{active:pageNo==page}">{{ page }}</button>
+    <!--   这里使用v-for遍历了数字 startAndEnd.end,原理和数组类似，但 v-for 遍历数组，索引从0开始，v-for遍历数字索引从1开始 -->
+    <template v-for="page in startAndEnd.end">
+      <button v-if="page >= startAndEnd.start"
+              :key="page"
+              @click="$emit('currentPage',page)"
+              :class="{active:pageNo==page}">
+        {{ page }}
+      </button>
+    </template>
 
     <button v-if="startAndEnd.end < totalPage - 1 ">......</button>
-    <button v-if="startAndEnd.end < totalPage" @click="$emit('currentPage',totalPage)">{{ totalPage }}</button>
+    <button v-if="startAndEnd.end < totalPage"
+            @click="$emit('currentPage',totalPage)">{{ totalPage }}</button>
 
-    <button  @click="$emit('currentPage',pageNo + 1)" :disabled="pageNo==totalPage">下一页</button>
+    <button @click="$emit('currentPage',pageNo + 1)"
+            :disabled="pageNo==totalPage">下一页</button>
 
     <button style="margin-left: 30px">共 {{ total }} 条</button>
   </div>
@@ -24,12 +35,12 @@ export default {
   props: ["total", "pageSize", "pageNo", "pagerCount"],
   computed: {
     //分页器一共多少页【总条数/每页展示条数】
-    totalPage() {
+    totalPage () {
       //向上取整数
       return Math.ceil(this.total / this.pageSize);
     },
     //底下的代码是整个分页器最重要的地方[算出连续五个数字、开头、结尾]
-    startAndEnd() {
+    startAndEnd () {
       //算出连续页码:开始与结束这两个数字
       let start = 0,
         end = 0;
@@ -86,7 +97,6 @@ export default {
     }
 
     &.active {
-      
       background-color: red;
       color: #fff;
     }

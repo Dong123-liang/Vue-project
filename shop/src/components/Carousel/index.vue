@@ -6,15 +6,17 @@
       <div class="swiper-slide"
            v-for="(item) in List"
            :key="item.id">
-        <img :src="item.imgUrl" />
+        <img :src="item.imgUrl"
+             width="100%"
+             height="100%" />
       </div>
     </div>
     <!-- 如果需要分页器 -->
     <div class="swiper-pagination"></div>
 
     <!-- 如果需要导航按钮 -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev swiper-button-white"></div>
+    <div class="swiper-button-next swiper-button-white"></div>
   </div>
 
 </template>
@@ -29,9 +31,6 @@ export default {
   props: ['List'],
   watch: {
     List: {
-      //能在这里直接初始化Swiper类的实例吗?
-      //不能在当前状态直接初始化Swiper类的实例,因为这里只能保证数据发生变化了[服务器数据回来了],
-      //但是你不能保证v-for遍历的结构完事了.
       immediate: true,
       handler (newvalue, oldvalue) {
         this.$nextTick(() => {
@@ -65,28 +64,21 @@ export default {
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev",
             },
-            //切换效果
-            // effect: "cube",
+
           });
-
-          //1:swiper插件,对外暴露一个Swiper构造函数
-          //2:Swiper构造函数需要传递参数 1、根节结构总点CSS选择器|根节点真实DOM节点  2、轮播图配置项
-          //鼠标进入停止轮播
-/*           mySwiper.el.onmouseover = function () {
-            mySwiper.autoplay.stop();
-          };
-          //鼠标离开开始轮播
-          mySwiper.el.onmouseout = function () {
-            mySwiper.autoplay.start();
-          }; */
-
-
-        });
-      },
-    },
+        })
+      }
+    }
   }
 }
-</script>
+  </script>
 
 <style>
+.swiper-container {
+  height: 100%;
+  width: 100%;
+}
+:root{
+  --swiper-theme-color:#f56c6c!important
+}
 </style>
