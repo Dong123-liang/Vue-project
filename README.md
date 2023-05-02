@@ -1,6 +1,8 @@
 # Vue-project
-Vue2全家桶+axios+Element-UI+Mock+swiper 仿站京东前台项目
-**项目源码地址：** [https://github.com/Dong123-liang/Vue-project.git](https://github.com/Dong123-liang/Vue-project.git)<br />**心得**<br />终于做完了商品汇项目,在写的过程中也是对vue2所学的知识点一个实际运用，对之前学习的知识点在项目中如何实际运用，发挥着怎样的功能有了一个全新的理解，也发现自己学习的过程中有许多疏漏的地方。做完此次项目也是对于整个vue2学习的一个知识总结。
+Vue2全家桶+axios+Element-UI+Mock+swiper 仿站京东前台项目</br>
+**项目源码地址：** [https://github.com/Dong123-liang/Vue-project.git](https://github.com/Dong123-liang/Vue-project.git)</br>
+**CSDN博客地址：** [https://blog.csdn.net/weixin_52417433/article/details/127462897?spm=1001.2014.3001.5502](https://blog.csdn.net/weixin_52417433/article/details/127462897?spm=1001.2014.3001.5502)
+<br />**心得**<br />终于做完了商品汇项目,在写的过程中也是对vue2所学的知识点一个实际运用，对之前学习的知识点在项目中如何实际运用，发挥着怎样的功能有了一个全新的理解，也发现自己学习的过程中有许多疏漏的地方。做完此次项目也是对于整个vue2学习的一个知识总结。
 
 <a name="f1cf9f08"></a>
 # 1.创建vue项目
